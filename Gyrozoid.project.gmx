@@ -21,23 +21,25 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <objects name="Player Objects">
-      <object>objects\obj_player</object>
-      <object>objects\obj_playerBullet</object>
-      <object>objects\obj_aimSight</object>
-      <object>objects\par_playerProjectile</object>
-    </objects>
-    <objects name="Enemy Objects">
-      <object>objects\par_enemy</object>
-      <object>objects\obj_asteroid</object>
-    </objects>
     <objects name="Menu Objects">
       <object>objects\obj_playButton</object>
     </objects>
+    <objects name="Gameplay Objects">
+      <objects name="Player Objects">
+        <object>objects\obj_player</object>
+        <object>objects\obj_playerBullet</object>
+        <object>objects\obj_aimSight</object>
+        <object>objects\par_playerProjectile</object>
+      </objects>
+      <objects name="Enemy Objects">
+        <object>objects\par_enemy</object>
+        <object>objects\obj_asteroid</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
     <room>rooms\room0</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

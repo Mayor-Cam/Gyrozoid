@@ -46,8 +46,18 @@ y = y + SpeedY
 direction = 90;
 image_angle = direction;
 
+// Mouse Delta Initialization
 prev_mouse_x = mouse_x;
 prev_mouse_y = mouse_y;
+
+// HP initialization
+maxHP = 2;
+hp = maxHP;
+
+// Post-damage invincibility initialization
+invTimerMax = 20;
+invTimer = 0;
+
 </string>
           </argument>
         </arguments>
@@ -77,6 +87,29 @@ prev_mouse_y = mouse_y;
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto(room0);
+</string>
           </argument>
         </arguments>
       </action>
@@ -114,6 +147,8 @@ key_right_released =    keyboard_check_released(ord('D'))    // keyboard_check_r
 key_up_released =       keyboard_check_released(ord('W'))    // keyboard_check_released(vk_up)
 key_down_released =     keyboard_check_released(ord('S'))    // keyboard_check_released(vk_down)
 
+
+// Mouse Delta
 mouse_dx = mouse_x - prev_mouse_x;
 mouse_dy = mouse_y - prev_mouse_y;
 
@@ -146,6 +181,12 @@ if (abs(velY) &gt; maxSpeedY)
         velY = sign(velY) * maxSpeedY;
     }
 
+// Invincibility Timer decrement
+    if (invTimer &gt; 0)
+    {
+        invTimer--;
+    }
+    
 /*
 //Retro Alarm
 if (key_left_pressed = true)  {Alarm[0] = 10}
@@ -177,6 +218,33 @@ direction += -mouse_dx;
 prev_mouse_x = mouse_x;
 prev_mouse_y = mouse_y;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="par_enemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (invTimer &lt; 1)
+{
+    hp--;
+    invTimer = invTimerMax;
+}
 </string>
           </argument>
         </arguments>
