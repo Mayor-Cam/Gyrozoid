@@ -244,6 +244,11 @@ prev_mouse_y = mouse_y;
 {
     hp--;
     invTimer = invTimerMax;
+    
+    if (hp &lt; 1)
+    {
+        instance_destroy();
+    }
 }
 </string>
           </argument>
