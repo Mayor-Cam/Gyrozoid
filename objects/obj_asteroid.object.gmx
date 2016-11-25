@@ -173,7 +173,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>random_range(2,6)</string>
+            <string>random_range(1,3)</string>
           </argument>
         </arguments>
       </action>
@@ -249,7 +249,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="par_playerProjectile">
+    <event eventtype="4" ename="obj_playerBullet">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -266,8 +266,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp -= obj_playerProjectile.damage;
+            <string>hp -= obj_playerBullet.damage;
 
+if (hp &lt; 1)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

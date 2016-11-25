@@ -14,6 +14,7 @@
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_playerBullet</sprite>
       <sprite>sprites\spr_aimSight</sprite>
+      <sprite>sprites\spr_bulletExplode</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -30,6 +31,7 @@
         <object>objects\obj_playerBullet</object>
         <object>objects\obj_aimSight</object>
         <object>objects\par_playerProjectile</object>
+        <object>objects\obj_BulletExplode</object>
       </objects>
       <objects name="Enemy Objects">
         <object>objects\par_enemy</object>
